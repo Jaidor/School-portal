@@ -1,0 +1,43 @@
+RewriteEngine on
+
+# Prevents directory listing
+Options -Indexes
+IndexIgnore *
+
+# Only allow GET and POST HTTP methods
+<LimitExcept GET POST>
+Deny from all
+</LimitExcept>
+
+#If you'd like to deny all but a few files, this would read as
+#<Files "index.php|get2json.php">
+#  Allow from all
+#</Files>
+#<Files *.php>
+#deny from all
+#</Files>
+#
+#
+<Files error_log>
+	Order allow,deny
+	Deny from all
+	Satisfy All
+</Files>
+<Files .htaccess>
+	Order Allow,Deny
+	Deny from all
+</Files> 
+#
+#
+AddDefaultCharset UTF-8
+#
+#
+#
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ index.php?querystring=$1
+#
+#

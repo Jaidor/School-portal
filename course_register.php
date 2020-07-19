@@ -13,7 +13,11 @@ $row = $query->fetch_assoc();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<<<<<<< HEAD
     <title>Course Registration</title>
+=======
+    <title>Student Registration</title>
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
 </head>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -30,6 +34,7 @@ $row = $query->fetch_assoc();
 <body>
 
 <form method="post" action="">
+<<<<<<< HEAD
 <p>Student course registration form</p>
 
 <div class="form-group">
@@ -106,6 +111,21 @@ $row = $query->fetch_assoc();
 </div> <br/>
 
 <button type="submit" class="btn btn-primary">Submit</button>
+=======
+<p>Course Registration</p>
+
+<div class="form-group">
+    <label for="exampleInputSurname">Matric No</label>
+    <input type="number" name="matric_no" class="form-control" id="exampleInputSurname" aria-describedby="surnameHelp" placeholder="Enter matric no">
+</div> <br/>
+
+<div class="form-group">
+    <label for="exampleInputPassword">Password</label>
+    <input type="password" name="pass" class="form-control" id="exampleInputPassword" aria-describedby="passwordHelp" placeholder="Enter password">
+</div> <br/>
+
+<button type="submit" class="btn btn-primary">Login</button>
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
 </form>
 
 </body

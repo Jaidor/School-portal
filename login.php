@@ -232,7 +232,11 @@ if(isset($_POST['matric_no'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<<<<<<< HEAD
     <title>Student Portal</title>
+=======
+    <title>Student Registration</title>
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
 </head>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -248,7 +252,11 @@ if(isset($_POST['matric_no'])){
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <body>
 
+<<<<<<< HEAD
 <form method="post" action="">
+=======
+<form method="post" action="controller.php">
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
 
 
 <div class="form-group">
@@ -301,7 +309,11 @@ $("#sel_fac").change(function(){
                 var id = response[i]['id'];
                 var name = response[i]['name'];
                 
+<<<<<<< HEAD
                 $("#sel_dept").append("<option value='"+name+"'>"+name+"</option>");
+=======
+                $("#sel_dept").append("<option value='"+id+"'>"+name+"</option>");
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
 
             }
         }
@@ -319,7 +331,11 @@ $("#sel_fac").change(function(){
 
     <div class="form-group">
         <label for="exampleInputMatric">Matriculation No</label>
+<<<<<<< HEAD
         <input type="text" name="matric_return" class="form-control" id="exampleInputMatric" aria-describedby="matricHelp" placeholder="Enter matric no">
+=======
+        <input type="number" name="matric" class="form-control" id="exampleInputMatric" aria-describedby="matricHelp" placeholder="Enter matric no">
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
     </div> <br/>
 
     <div class="form-group">
@@ -398,7 +414,11 @@ $("#sel_fac").change(function(){
 
   <div class="form-group">
     <label for="exampleInputSurname">Surname</label>
+<<<<<<< HEAD
     <input type="text" name="surname" class="form-control" id="exampleInputSurname" aria-describedby="surnameHelp" placeholder="Enter surname">
+=======
+    <input type="text" name="name" class="form-control" id="exampleInputSurname" aria-describedby="surnameHelp" placeholder="Enter surname">
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
   </div> <br/>
 
   <div class="form-group">
@@ -500,8 +520,19 @@ $("#sel_fac").change(function(){
 
 
 
+<<<<<<< HEAD
 <div class="show_login" style="display:none;">
     <form method="post" action="">
+=======
+
+
+
+
+
+
+<div class="show_login" style="display:none;">
+    <form method="post" action="controller.php">
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
 
         <p>Student Login</p>
 

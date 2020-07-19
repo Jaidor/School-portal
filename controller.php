@@ -51,7 +51,11 @@ if(isset($_POST['type'])){
     $confirm_pass = $params['confirm_pass'];
 
 
+<<<<<<< HEAD
     $student_id = $params['matric_return'];
+=======
+    $matric = $params['matric'];
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
     $surname_return = $params['surname_return'];
     $other_return = $params['other_return'];
     $email_return = $params['email_return'];
@@ -63,7 +67,11 @@ if(isset($_POST['type'])){
     $confirm_pass_return = $params['confirm_pass_return'];
 
     if($type == "new"){
+<<<<<<< HEAD
         if($surname == '' || $othernames == '' || $email == '' || $state == '' || $gender == '' || $faculty == '' || $dept == '' || $year == '' || $semester  == '' || $pass == '' || $confirm_pass == ''){
+=======
+        if($name = '' || $othernames == '' || $email == '' || $state == '' || $gender == '' || $faculty == '' || $dept == '' || $year == '' || $semester  == '' || $pass == '' || $confirm_pass == ''){
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
 
             echo "Field is empty, kindly fill.";
             die();
@@ -96,7 +104,11 @@ if(isset($_POST['type'])){
             $hash_pass = password_hash($pass, PASSWORD_BCRYPT);
 
             $sql = "insert into register (matric_no, surname, names, email, phone, state, gender, faculty, department, academic_year, semester, password)
+<<<<<<< HEAD
             VALUES ('$matric', '$surname', '$othernames', '$email', '$phone', '$state', '$gender', '$faculty', '$dept', '$year', '$semester', '$hash_pass')";
+=======
+            VALUES ('$matric', '$name', '$othernames', '$email', '$phone', '$state', '$gender', '$faculty', '$dept', '$year', '$semester', '$hash_pass')";
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
 
             if ($conn->query($sql) === TRUE) {
             echo "Registration successfully...Kindly login with this your matric no ".$matric." ";
@@ -110,7 +122,11 @@ if(isset($_POST['type'])){
 
     if($type == "return"){
 
+<<<<<<< HEAD
         if($student_id == '' || $surname_return == '' || $other_return == '' || $email_return == '' || $phone_return == '' || $state_return == '' || $pass_return == '' || $sem_return =='' || $year_return == '' || $confirm_pass_return == ''){
+=======
+        if($matric = '' || $surname_return == '' || $other_return == '' || $email_return == '' || $phone_return == '' || $state_return == '' || $pass_return == '' || $sem_return =='' || $year_return == '' || $confirm_pass_return == ''){
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
 
             echo "Field is empty, kindly fill.";
             die();
@@ -139,9 +155,20 @@ if(isset($_POST['type'])){
                 die();
             }
 
+<<<<<<< HEAD
             $query = $conn->query("select * from register where matric_no = '$student_id' ");
             $row = $query->fetch_assoc();
 
+=======
+            $query = $conn->query("select * from register where matric_no = '$matric' ");
+            $row = $query->fetch_assoc();
+
+            // echo "<pre>";
+            // print_r($row);
+            // echo "</pre>";
+            // die();
+
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
             if(!$row){
                  echo "Invalid matric no...Kindly enter correct matric no";
                  die();
@@ -149,11 +176,16 @@ if(isset($_POST['type'])){
 
                 $hash_pass = password_hash($pass_return, PASSWORD_BCRYPT);
 
+<<<<<<< HEAD
                 $update = $conn->query("update register set surname = '$surname_return', names = '$other_return', email = '$email_return', 
+=======
+                $update = $conn->query("update register set surname = '$surname_return', names = '$other_return', email = '$email_retun', 
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
                 phone = '$phone_return', state = '$state_return', password = '$hash_pass', semester = '$sem_return', academic_year = '$year_return' 
                 where id = '{$row['id']}'");
 
                 if($update === true){
+<<<<<<< HEAD
                     echo "Registration successfully...Kindly login with this your matric no ".$student_id." ";
                     die();
                     // echo '<script>window.location="http://localhost/project/login.php";</script>';
@@ -161,6 +193,13 @@ if(isset($_POST['type'])){
                     echo "Error on registration ";
                     die();
                     // echo '<script>window.location="http://localhost/project/login.php";</script>';
+=======
+                    echo "Registration successfully...Kindly login with this your matric no ".$matric." ";
+                    echo '<script>window.location="http://localhost/project/login.php";</script>';
+                }else {
+                    echo "Error on registration ";
+                    echo '<script>window.location="http://localhost/project/login.php";</script>';
+>>>>>>> 2ccb77a1e78ef27ce1d3b1cfaf190c0a49a964ed
                 }
 
             }
